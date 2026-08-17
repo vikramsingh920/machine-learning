@@ -1,27 +1,72 @@
-# Outlier Detection using Z-Score
+# Outlier Detection Using IQR
 
-This project demonstrates how to detect outliers in a dataset using the Z-Score method.
+This notebook is created for **learning and understanding the IQR (Interquartile Range) method for outlier detection**.
 
-## Technologies Used
+The main purpose of this notebook is to understand how outliers can be identified using statistical techniques and how they can be handled using Pandas.
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- SciPy
+## What I Learned
 
-## Project Structure
+* What outliers are
+* How to visualize outliers using boxplots
+* Understanding the 25th percentile (Q1)
+* Understanding the 75th percentile (Q3)
+* Calculating the Interquartile Range (IQR)
+* Calculating the lower and upper limits
+* Identifying outliers using the IQR method
+* Removing outliers from a DataFrame
 
-- `outlier_detection_zscore.ipynb` - Jupyter Notebook containing the complete analysis.
-- `requirements.txt` - Python libraries required to run the project.
-- `README.md` - Project documentation.
+## IQR Method
 
-## Method
+The Interquartile Range is calculated as:
 
-Z-Score is used to identify data points that are significantly different from the mean.
+```text
+IQR = Q3 - Q1
+```
 
-A common threshold for detecting outliers is:
+The outlier boundaries are:
 
-- Z-Score > 3
-- Z-Score < -3
+```text
+Lower Limit = Q1 - 1.5 × IQR
+Upper Limit = Q3 + 1.5 × IQR
+```
+
+Values below the lower limit or above the upper limit are considered potential outliers.
+
+## Notebook
+
+The notebook uses a placement dataset and applies the IQR method to the `placement_exam_marks` column.
+
+The notebook covers the complete process:
+
+```text
+Dataset
+   ↓
+Data Visualization
+   ↓
+Boxplot
+   ↓
+Calculate Q1 and Q3
+   ↓
+Calculate IQR
+   ↓
+Calculate Lower & Upper Limits
+   ↓
+Identify Outliers
+   ↓
+Remove Outliers
+   ↓
+Compare the Data
+```
+
+## Libraries Used
+
+* NumPy
+* Pandas
+* Matplotlib
+* Seaborn
+
+## Purpose
+
+This is a **practice/learning notebook**, created while learning the fundamentals of **data preprocessing and outlier detection in Machine Learning**.
+
+It is not intended to be a production ML project.
